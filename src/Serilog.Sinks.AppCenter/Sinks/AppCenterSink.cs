@@ -9,7 +9,7 @@ using Serilog.Events;
 namespace Serilog.Sinks.AppCenter
 {
     /// <summary>
-    /// 
+    /// The AppCenter implementation of <see cref="ILogEventSink"/>.
     /// </summary>
     /// <seealso cref="Serilog.Core.ILogEventSink" />
     public class AppCenterSink : ILogEventSink
@@ -26,7 +26,8 @@ namespace Serilog.Sinks.AppCenter
         /// <param name="properties">The properties.</param>
         /// <param name="restrictedToMinimumLevel">The restricted to minimum level.</param>
         /// <exception cref="ArgumentNullException">appSecret</exception>
-        public AppCenterSink(IFormatProvider formatProvider,
+        public AppCenterSink(
+            IFormatProvider formatProvider,
             string appSecret,
             IDictionary<string, string> properties,
             LogEventLevel restrictedToMinimumLevel)

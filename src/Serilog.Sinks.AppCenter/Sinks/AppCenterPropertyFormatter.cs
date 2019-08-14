@@ -14,17 +14,24 @@ namespace Serilog.Sinks.AppCenter
     /// </summary>
     public static class AppCenterPropertyFormatter
     {
-        static readonly HashSet<Type> RavenSpecialScalars = new HashSet<Type>
+        private static readonly HashSet<Type> AppCenterSpecialScalars = new HashSet<Type>
         {
             typeof(bool),
-            typeof(byte), typeof(short), typeof(ushort), typeof(int), typeof(uint),
-                typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(decimal),
+            typeof(byte),
+            typeof(short),
+            typeof(ushort),
+            typeof(int),
+            typeof(uint),
+            typeof(long),
+            typeof(ulong),
+            typeof(float),
+            typeof(double),
+            typeof(decimal),
             typeof(byte[])
         };
 
         /// <summary>
-        /// Simplify the object so as to make handling the serialized
-        /// representation easier.
+        /// Simplify the object so as to make handling the serialized representation easier.
         /// </summary>
         /// <param name="value">The value to simplify (possibly null).</param>
         /// <returns>A simplified representation.</returns>
@@ -32,7 +39,9 @@ namespace Serilog.Sinks.AppCenter
         {
             var scalar = value as ScalarValue;
             if (scalar != null)
+            {
                 return SimplifyScalar(scalar.Value);
+            }
 
             var dict = value as DictionaryValue;
             if (dict != null)
@@ -54,34 +63,45 @@ namespace Serilog.Sinks.AppCenter
 
                     result.Add(key, Simplify(element.Value));
                 }
+
                 return result;
             }
 
             var seq = value as SequenceValue;
             if (seq != null)
+            {
                 return seq.Elements.Select(Simplify).ToArray();
+            }
 
             var str = value as StructureValue;
             if (str != null)
             {
                 var props = str.Properties.ToDictionary(p => p.Name, p => Simplify(p.Value));
                 if (str.TypeTag != null)
+                {
                     props["$typeTag"] = str.TypeTag;
+                }
+
                 return props;
             }
 
             return null;
         }
 
-        static object SimplifyScalar(object value)
+        private static object SimplifyScalar(object value)
         {
-            if (value == null) return null;
+            if (value == null)
+            {
+                return null;
+            }
 
             var valueType = value.GetType();
-            if (RavenSpecialScalars.Contains(valueType)) return value;
+            if (AppCenterSpecialScalars.Contains(valueType))
+            {
+                return value;
+            }
 
             return value.ToString();
         }
     }
-
 }

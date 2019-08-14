@@ -5,14 +5,27 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.AppCenter", "src\Serilog.Sinks.AppCenter\Serilog.Sinks.AppCenter.csproj", "{ED8BD3F3-8DD3-4C48-973E-AF5DEEFD8C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.AppCenter.Tests", "src\Serilog.Sinks.AppCenter.Tests\Serilog.Sinks.AppCenter.Tests.csproj", "{40D020F1-959E-4898-A4D7-10703AC3F5DC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution", ".solution", "{BBAA1553-AAF5-49A9-9D2A-F3794F6A7063}"
 ProjectSection(SolutionItems) = preProject
 	LICENSE = LICENSE
 	README.md = README.md
 	.gitignore = .gitignore
+	azure-pipelines.yml = azure-pipelines.yml
+	build.ps1 = build.ps1
+	build.sh = build.sh
+	common.build.props = common.build.props
+	common.build.targets = common.build.targets
+	analyzers.ruleset = analyzers.ruleset
+	NuGet.config = NuGet.config
+	GitVersion.yml = GitVersion.yml
+	stylecop.json = stylecop.json
 EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{31E13C17-F139-417F-9684-AB940EB00143}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = ".build", ".build\.build.csproj", "{931D102D-A986-4ECB-A03D-A5024D904538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.AppCenter.Tests", "test\Serilog.Sinks.AppCenter.Tests\Serilog.Sinks.AppCenter.Tests.csproj", "{BAF75B38-B693-4666-9D01-6D52BAE16E49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,19 +33,24 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{931D102D-A986-4ECB-A03D-A5024D904538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931D102D-A986-4ECB-A03D-A5024D904538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8BD3F3-8DD3-4C48-973E-AF5DEEFD8C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED8BD3F3-8DD3-4C48-973E-AF5DEEFD8C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8BD3F3-8DD3-4C48-973E-AF5DEEFD8C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8BD3F3-8DD3-4C48-973E-AF5DEEFD8C44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40D020F1-959E-4898-A4D7-10703AC3F5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40D020F1-959E-4898-A4D7-10703AC3F5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40D020F1-959E-4898-A4D7-10703AC3F5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40D020F1-959E-4898-A4D7-10703AC3F5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF75B38-B693-4666-9D01-6D52BAE16E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF75B38-B693-4666-9D01-6D52BAE16E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF75B38-B693-4666-9D01-6D52BAE16E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF75B38-B693-4666-9D01-6D52BAE16E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64C79C8A-0EAB-4349-B8BE-7092FDA5325E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{931D102D-A986-4ECB-A03D-A5024D904538} = {31E13C17-F139-417F-9684-AB940EB00143}
 	EndGlobalSection
 EndGlobal
