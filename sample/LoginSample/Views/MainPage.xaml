@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:vm="clr-namespace:LoginSample"
+             xmlns:ui="clr-namespace:LoginSample"
+             ios:Page.UseSafeArea="true"
+             x:TypeArguments="vm:MainViewModel"
+             x:Class="LoginSample.MainPage">
+    
+    <StackLayout Margin="20" VerticalOptions="End">
+        <ActivityIndicator 
+            x:Name="IsRunning" 
+            IsRunning="{Binding IsRunning}"
+            Color="Teal"
+            VerticalOptions="Start" />
+        
+        <Label x:Name="LoginTitle" 
+               Text="Enter Your Credentials:" 
+               HorizontalTextAlignment="Center" 
+               FontAttributes="Bold" 
+               FontSize="Large" />
+        <Label x:Name="Subtitle" 
+               Text="No Login Attempts" 
+               HorizontalTextAlignment="Center" 
+               FontAttributes="Italic" Margin="0,0,0,40"/>
+        
+        <Picker x:Name="Server"
+               SelectedItem="{Binding ServerAddress}"
+               ItemsSource="{Binding ServerList}" />
+        
+        <Entry x:Name="User"
+               Text="{Binding Username}"
+               Placeholder="Username"/>
+        <Entry x:Name="Password"
+               Text="{Binding Password}"
+               Placeholder="Password"
+               Margin="0,0,0,40"/>
+        
+        <Button x:Name="Login"
+                Command="{Binding Login}"
+                Text="Login" 
+                BackgroundColor="Teal"
+                TextColor="White"/>
+    </StackLayout>
+</ui:ContentPageBase>

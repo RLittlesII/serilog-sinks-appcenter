@@ -12,14 +12,9 @@ namespace Serilog.Sinks.AppCenter.Tests
         public AppCenterTests()
         {
             Logger = new LoggerConfiguration()
-                .WriteTo
-                .AppCenterEvents("123456")
-                .WriteTo
-                .AppCenterCrashes("987456")
-                .MinimumLevel
-                .Debug()
-                .Enrich
-                .FromLogContext()
+                .WriteTo.AppCenterCrashes()
+                .MinimumLevel.Debug()
+                .Enrich.FromLogContext()
                 .CreateLogger();
         }
 
