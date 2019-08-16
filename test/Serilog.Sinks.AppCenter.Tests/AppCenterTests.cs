@@ -13,7 +13,9 @@ namespace Serilog.Sinks.AppCenter.Tests
         {
             Logger = new LoggerConfiguration()
                 .WriteTo
-                .AppCenter("123456")
+                .AppCenterEvents("123456")
+                .WriteTo
+                .AppCenterCrashes("987456")
                 .MinimumLevel
                 .Debug()
                 .Enrich

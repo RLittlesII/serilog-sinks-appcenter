@@ -9,15 +9,11 @@ using Serilog.Events;
 namespace Serilog.Sinks.AppCenter
 {
     /// <summary>
-    /// The AppCenter implementation of <see cref="ILogEventSink"/>.
+    /// Base abstraction for AppCenterSink.
     /// </summary>
     /// <seealso cref="Serilog.Core.ILogEventSink" />
-    public class AppCenterSink : ILogEventSink
+    public abstract class AppCenterSink : ILogEventSink
     {
-        private readonly IFormatProvider _formatProvider;
-        private readonly IDictionary<string, string> _properties;
-        private readonly LogEventLevel _restrictedToMinimumLevel;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="AppCenterSink"/> class.
         /// </summary>
@@ -25,8 +21,7 @@ namespace Serilog.Sinks.AppCenter
         /// <param name="appSecret">The application secret.</param>
         /// <param name="properties">The properties.</param>
         /// <param name="restrictedToMinimumLevel">The restricted to minimum level.</param>
-        /// <exception cref="ArgumentNullException">appSecret</exception>
-        public AppCenterSink(
+        protected AppCenterSink(
             IFormatProvider formatProvider,
             string appSecret,
             IDictionary<string, string> properties,
@@ -37,32 +32,30 @@ namespace Serilog.Sinks.AppCenter
                 throw new ArgumentNullException(nameof(appSecret));
             }
 
-            _formatProvider = formatProvider;
-            _properties = properties;
-            _restrictedToMinimumLevel = restrictedToMinimumLevel;
+            FormatProvider = formatProvider;
+            Properties = properties;
+            RestrictedToMinimumLevel = restrictedToMinimumLevel;
         }
+
+        /// <summary>
+        /// Gets the format provider.
+        /// </summary>
+        protected IFormatProvider FormatProvider { get; }
+
+        /// <summary>
+        /// Gets the restricted to minimum level.
+        /// </summary>
+        protected LogEventLevel RestrictedToMinimumLevel { get; }
+
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        protected IDictionary<string, string> Properties { get; }
 
         /// <summary>
         /// Emit the provided log event to the sink.
         /// </summary>
         /// <param name="logEvent">The log event to write.</param>
-        public void Emit(LogEvent logEvent)
-        {
-            var properties =
-                logEvent
-                    .Properties
-                    .Select(kvp => new
-                    {
-                        Name = kvp.Key,
-                        Value = AppCenterPropertyFormatter.Simplify(kvp.Value)
-                    })
-                    .ToDictionary(x => x.Name, x => x.Value);
-
-            properties.Add("RenderedLogMessage", logEvent.RenderMessage(_formatProvider));
-
-            properties.Add("LogMessageTemplate", logEvent.MessageTemplate.Text);
-
-            Analytics.TrackEvent(logEvent.RenderMessage());
-        }
+        public abstract void Emit(LogEvent logEvent);
     }
 }
