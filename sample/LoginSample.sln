@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginSample.iOS", "LoginSam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginSample", "LoginSample\LoginSample.csproj", "{5117BD1C-90E2-4F6D-839F-934222065D64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.AppCenter", "..\src\Serilog.Sinks.AppCenter\Serilog.Sinks.AppCenter.csproj", "{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{5117BD1C-90E2-4F6D-839F-934222065D64}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{5117BD1C-90E2-4F6D-839F-934222065D64}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{5117BD1C-90E2-4F6D-839F-934222065D64}.Release|iPhone.Build.0 = Release|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6A1FC48D-2A40-46D7-8CC1-554EDAD78DB2}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

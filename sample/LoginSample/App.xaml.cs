@@ -23,7 +23,9 @@ namespace LoginSample
             SextantHelper.RegisterView<MainPage, MainViewModel>();
             SextantHelper.RegisterView<SuccessPage, SuccessViewModel>();
 
-            AppCenter.Start("ios=ff215962-4af4-48ff-948b-a5da6643caa7;",
+            AppCenter.Start(
+                "ios=ff215962-4af4-48ff-948b-a5da6643caa7;" +
+                "android=6748b001-178c-4f05-9669-7f615a89c970;",
                 typeof(Crashes));
 
             InitializeLogger();

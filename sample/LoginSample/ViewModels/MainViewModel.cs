@@ -103,7 +103,12 @@ namespace LoginSample
                     LoadServers.ThrownExceptions)
                 .SelectMany(ex =>
                 {
-                    this.Log().Warn(ex, "New Test with json date: {@Date} with a list {@List}", DateTime.Now, new List<string> { "a1", "a2", "a3"});
+                    // using serilog
+                    Serilog.Log.Warning(ex, "Exception using Serilog {@Date} with a list {@List}", DateTime.Now, new List<string> { "a1", "a2", "a3" });
+
+                    // using splat.serilog
+                    this.Log().Warn(ex, "Exception using Serilog.Splat {@Date} with a list {@List}", DateTime.Now, new List<string> { "a1", "a2", "a3" });
+
                     return ShowAlert.Handle(new AlertViewModel("Error", ex.Message, "ok"));
                 })
                 .Subscribe();
