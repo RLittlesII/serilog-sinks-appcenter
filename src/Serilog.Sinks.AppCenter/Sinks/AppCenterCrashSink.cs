@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Microsoft.AppCenter.Crashes;
 using Serilog.Core;
 using Serilog.Events;
@@ -51,9 +49,22 @@ namespace Serilog.Sinks.AppCenter
         /// <param name="logEvent">The log event to write.</param>
         public void Emit(LogEvent logEvent)
         {
-            var properties = new Dictionary<string, string>();
+            var properties = new Dictionary<string, string>
+            {
+                { "level", logEvent.Level.ToString() }
+            };
 
-            properties.Add("Key", logEvent.RenderMessage());
+            properties.Add("message", logEvent.RenderMessage());
+
+            foreach (var property in logEvent.Properties)
+            {
+                using (var stringWriter = new StringWriter())
+                {
+                    property.Value.Render(stringWriter);
+                    var str = stringWriter.ToString();
+                    properties.Add(property.Key, str);
+                }
+            }
 
             Crashes.TrackError(logEvent.Exception, properties);
         }
