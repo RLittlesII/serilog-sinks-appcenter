@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -19,11 +19,10 @@
     <PackageReference Include="Splat.Serilog" Version="8.2.4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Serilog.Sinks.AppCenter\Serilog.Sinks.AppCenter.csproj" />
+    <ProjectReference Include="..\..\src\Crash\Crash.csproj" />
   </ItemGroup>
+
 </Project>

@@ -17,8 +17,8 @@ namespace LoginSample
         {
             InitializeComponent();
 
-            Locator.CurrentMutable.Register(() => new AuthenticationService(), typeof(IAuthenticationService));
-            Locator.CurrentMutable.Register(() => new ServerService(), typeof(IServerService));
+            Locator.CurrentMutable.Register<IAuthenticationService>(() => new AuthenticationService());
+            Locator.CurrentMutable.Register<IServerService>(() => new ServerService());
 
             SextantHelper.RegisterView<MainPage, MainViewModel>();
             SextantHelper.RegisterView<SuccessPage, SuccessViewModel>();
@@ -36,9 +36,12 @@ namespace LoginSample
         private void InitializeLogger()
         {
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.AppCenterCrashes()
-                .MinimumLevel.Debug()
-                .Enrich.FromLogContext()
+                .WriteTo
+                .AppCenterCrashes()
+                .MinimumLevel
+                .Debug()
+                .Enrich
+                .FromLogContext()
                 .CreateLogger();
 
             Locator.CurrentMutable.UseSerilogFullLogger(Log.Logger);
