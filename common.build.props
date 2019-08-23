@@ -1,12 +1,13 @@
 <Project>
     <PropertyGroup>
+        <Authors>RLittlesII, Giusepe</Authors>
         <Company>RLittlesII</Company>
-        <Authors>Rodney Littles, II</Authors>
-        <LangVersion>latest</LangVersion>
-        <RepositoryUrl>https://github.com/RLittlesII/serilog-sinks-appcenter/</RepositoryUrl>
+        <Copyright>Copyright Rodney Littles, II © 2019</Copyright>
+        <RepositoryUrl>https://github.com/RLittlesII/serilog-sinks-appcenter.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageProjectUrl>https://github.com/RLittlesII/serilog-sinks-appcenter</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/RLittlesII/serilog-sinks-appcenter/blob/master/LICENSE</PackageLicenseUrl>
+        <LangVersion>latest</LangVersion>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 </Project>
