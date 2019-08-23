@@ -21,7 +21,7 @@ A Serilog sink that writes events to App Center
 <!-- nuget packages -->
 | Package | NuGet | MyGet |
 | ------- | ----- | ----- |
-| Serilog.Sinks.AppCenter | [![nuget-version-badge]![nuget-downloads-badge]][nuget] | [![myget-version-badge]![myget-downloads-badge]][myget] |
+| Serilog.Sinks.AppCenter.Crash | [![nuget-version-badge]![nuget-downloads-badge]][nuget] | [![myget-version-badge]![myget-downloads-badge]][myget] |
 <!-- nuget packages -->
 
 <!-- generated references -->
@@ -37,10 +37,10 @@ A Serilog sink that writes events to App Center
 [azurepipelines-history]: https://dev.azure.com/rlittlesii/github/_build/latest?definitionId=13&branchName=master
 [azurepipelines-history-badge]: https://buildstats.info/azurepipelines/chart/rlittlesii/github/13?includeBuildsFromPullRequest=false "Azure Pipelines History"
 
-[nuget]: https://www.nuget.org/packages/Serilog.Sinks.AppCenter/
-[nuget-version-badge]: https://img.shields.io/nuget/v/Serilog.Sinks.AppCenter.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
-[nuget-downloads-badge]: https://img.shields.io/nuget/dt/Serilog.Sinks.AppCenter.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
-[myget]: https://www.myget.org/feed/rlittlesii/package/nuget/Serilog.Sinks.AppCenter
-[myget-version-badge]: https://img.shields.io/myget/rlittlesii/vpre/Serilog.Sinks.AppCenter.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
-[myget-downloads-badge]: https://img.shields.io/myget/rlittlesii/dt/Serilog.Sinks.AppCenter.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
+[nuget]: https://www.nuget.org/packages/Serilog.Sinks.AppCenter.Crash/
+[nuget-version-badge]: https://img.shields.io/nuget/v/Serilog.Sinks.AppCenter.Crash.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
+[nuget-downloads-badge]: https://img.shields.io/nuget/dt/Serilog.Sinks.AppCenter.Crash.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
+[myget]: https://www.myget.org/feed/rlittlesii/package/nuget/Serilog.Sinks.AppCenter.Crash
+[myget-version-badge]: https://img.shields.io/myget/rlittlesii/vpre/Serilog.Sinks.AppCenter.Crash.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
+[myget-downloads-badge]: https://img.shields.io/myget/rlittlesii/dt/Serilog.Sinks.AppCenter.Crash.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
 <!-- generated references -->
