@@ -5,20 +5,20 @@ using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
 
-namespace Serilog.Sinks.AppCenter
+namespace Serilog.Sinks.AppCenter.Crash
 {
     /// <summary>
     /// Serilog sink for App Center <see cref="Crashes"/>.
     /// </summary>
-    public class AppCenterCrashSink : ILogEventSink
+    public class CrashSink : ILogEventSink
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppCenterCrashSink"/> class.
+        /// Initializes a new instance of the <see cref="CrashSink"/> class.
         /// </summary>
         /// <param name="formatProvider">The format provider.</param>
         /// <param name="properties">The properties.</param>
         /// <param name="restrictedToMinimumLevel">The restricted to minimum level.</param>
-        public AppCenterCrashSink(
+        public CrashSink(
             ITextFormatter formatProvider,
             IDictionary<string, string> properties,
             LogEventLevel restrictedToMinimumLevel)

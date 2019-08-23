@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;netstandard1.6</TargetFrameworks>
+    <RootNamespace>Serilog.Sinks.AppCenter.Crash</RootNamespace>
+    <AssemblyName>Serilog.Sinks.AppCenter.Crash</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

@@ -4,7 +4,7 @@ using System.Text;
 using Serilog.Configuration;
 using Serilog.Events;
 using Serilog.Formatting;
-using Serilog.Sinks.AppCenter;
+using Serilog.Sinks.AppCenter.Crash;
 
 namespace Serilog
 {
@@ -33,7 +33,7 @@ namespace Serilog
             }
 
             return loggerConfiguration.Sink(
-                new AppCenterCrashSink(
+                new CrashSink(
                     formatProvider,
                     properties,
                     restrictedToMinimumLevel));

@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-
+    <AssemblyName>Serilog.Sinks.AppCenter.Crash.Tests</AssemblyName>
+    <RootNamespace>Serilog.Sinks.AppCenter.Crash.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
@@ -17,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Serilog.Sinks.AppCenter\Serilog.Sinks.AppCenter.csproj" />
+    <ProjectReference Include="..\..\src\Crash\Crash.csproj" />
   </ItemGroup>
 
 </Project>

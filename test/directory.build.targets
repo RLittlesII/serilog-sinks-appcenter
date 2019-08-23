@@ -4,7 +4,6 @@
         <PackageReference Include="ReactiveUI.Events.XamEssentials" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Bogus" />
         <PackageReference Include="coverlet.msbuild" />
         <PackageReference Include="FluentAssertions" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" />

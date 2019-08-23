@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 
-namespace Serilog.Sinks.AppCenter.Tests
+namespace Serilog.Sinks.AppCenter.Crash.Tests
 {
     public class AppCenterTests
     {
