@@ -7,6 +7,7 @@
         <RepositoryType>git</RepositoryType>
         <PackageProjectUrl>https://github.com/RLittlesII/serilog-sinks-appcenter</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/RLittlesII/serilog-sinks-appcenter/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageTags>serilog;logging;xamarin;android;ios;appcenter;diagnostics</PackageTags>
         <LangVersion>latest</LangVersion>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     </PropertyGroup>

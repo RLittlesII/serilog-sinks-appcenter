@@ -4,6 +4,7 @@
     <TargetFrameworks>netstandard1.3;netstandard1.6</TargetFrameworks>
     <RootNamespace>Serilog.Sinks.AppCenter.Crash</RootNamespace>
     <AssemblyName>Serilog.Sinks.AppCenter.Crash</AssemblyName>
+    <Description>A Serilog sink that writes events to App Center Diagnostics.</Description>
   </PropertyGroup>
 
   <ItemGroup>
