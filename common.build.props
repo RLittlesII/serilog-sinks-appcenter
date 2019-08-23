@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
-        <Authors>RLittlesII, Giusepe</Authors>
+        <Authors>RLittlesII;Giusepe</Authors>
         <Company>RLittlesII</Company>
         <Copyright>Copyright Rodney Littles, II © 2019</Copyright>
         <RepositoryUrl>https://github.com/RLittlesII/serilog-sinks-appcenter.git</RepositoryUrl>
