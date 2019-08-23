@@ -3,6 +3,7 @@ trigger:
     include:
       - master
       - feature/*
+      - release/*
       - refs/tags/*
 pr:
   autoCancel: true
