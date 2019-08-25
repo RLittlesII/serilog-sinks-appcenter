@@ -25,14 +25,14 @@ A Serilog sink that writes events to App Center
 <!-- nuget packages -->
 
 <!-- generated references -->
-[github-release]: https://github.com/RLittlesII/Serilog.Sinks.AppCenter/releases/latest
-[github-release-badge]: https://img.shields.io/github/release/RLittlesII/Serilog.Sinks.AppCenter.svg?logo=github&style=flat "Latest Release"
-[github-license]: https://github.com/RLittlesII/Serilog.Sinks.AppCenter/blob/master/LICENSE
-[github-license-badge]: https://img.shields.io/github/license/RLittlesII/Serilog.Sinks.AppCenter.svg?style=flat "License"
-[codecov]: https://codecov.io/gh/RLittlesII/Serilog.Sinks.AppCenter
-[codecov-badge]: https://img.shields.io/codecov/c/github/RLittlesII/Serilog.Sinks.AppCenter.svg?color=E03997&label=codecov&logo=codecov&logoColor=E03997&style=flat "Code Coverage"
+[github-release]: https://github.com/RLittlesII/serilog-sinks-appcenter/releases/latest
+[github-release-badge]: https://img.shields.io/github/release/RLittlesII/serilog-sinks-appcenter.svg?logo=github&style=flat "Latest Release"
+[github-license]: https://github.com/RLittlesII/serilog-sinks-appcenter/blob/master/LICENSE
+[github-license-badge]: https://img.shields.io/github/license/RLittlesII/serilog-sinks-appcenter.svg?style=flat "License"
+[codecov]: https://codecov.io/gh/RLittlesII/serilog-sinks-appcenter
+[codecov-badge]: https://img.shields.io/codecov/c/github/RLittlesII/serilog-sinks-appcenter.svg?color=E03997&label=codecov&logo=codecov&logoColor=E03997&style=flat "Code Coverage"
 
-[azurepipelines]: https://dev.azure.com/rlittlesii/github/_apis/build/status/Serilog.Sinks.AppCenter?branchName=master
+[azurepipelines]: https://dev.azure.com/rlittlesii/github/_apis/build/status/serilog-sinks-appcenter?branchName=master
 [azurepipelines-badge]: https://img.shields.io/azure-devops/build/rlittlesii/github/13.svg?color=98C6FF&label=azure%20pipelines&logo=azuredevops&logoColor=98C6FF&style=flat "Azure Pipelines Status"
 [azurepipelines-history]: https://dev.azure.com/rlittlesii/github/_build/latest?definitionId=13&branchName=master
 [azurepipelines-history-badge]: https://buildstats.info/azurepipelines/chart/rlittlesii/github/13?includeBuildsFromPullRequest=false "Azure Pipelines History"
