@@ -51,10 +51,9 @@ namespace Serilog.Sinks.AppCenter.Crash
         {
             var properties = new Dictionary<string, string>
             {
-                { "level", logEvent.Level.ToString() }
+                { "level", logEvent.Level.ToString() },
+                { "message", logEvent.RenderMessage() }
             };
-
-            properties.Add("message", logEvent.RenderMessage());
 
             foreach (var property in logEvent.Properties)
             {
