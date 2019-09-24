@@ -72,4 +72,4 @@ jobs:
           Artifacts: "$(Build.ArtifactStagingDirectory)/"
           NuGetVersion: "5.2.0"
           Verbosity: $(Verbosity)
-          GitHubPackages: false
+          GitHubPackages: true
