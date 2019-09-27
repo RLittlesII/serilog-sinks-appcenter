@@ -16,7 +16,7 @@ resources:
     - repository: rsg
       type: github
       name: RocketSurgeonsGuild/AzureDevopsTemplates
-      ref: refs/tags/v0.7.12
+      ref: refs/tags/v0.10.5
       endpoint: github
 
 variables:
@@ -43,22 +43,22 @@ jobs:
 
   - template: pipeline/nuke-job.yml@rsg
     parameters:
-      name: 'Windows'
+      name: 'Build'
       dependsOn: GitVersion
-      vmImage: "windows-2019"
       Configuration: $(Configuration)
       Verbosity: $(Verbosity)
       GitHub: true
       GitHubPackages: false
       DotNetVersion: "2.2.300"
-      DotNet3Version: "3.0.100-preview6-012264"
-      NuGetVersion: "4.7.1"
+      DotNet3Version: "3.0.100"
+      NuGetVersion: "5.2.0"
+      EnableReleaseNotes: false
 
   - job: Publish
     pool:
       vmImage: "windows-2019"
     dependsOn:
-      - Windows
+      - Build
     steps:
       - task: DownloadBuildArtifacts@0
         displayName: "Download NuGet Packages"
