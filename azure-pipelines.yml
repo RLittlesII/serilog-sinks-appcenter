@@ -31,6 +31,8 @@ variables:
     value: $(Build.ArtifactStagingDirectory)
   - name: DOTNET_SKIP_FIRST_TIME_EXPERIENCE
     value: "true"
+  - name: CodeCovToken
+    value: 'a7985b68-199e-4537-bfed-62a02506f307'
 
 jobs:
   - job: GitVersion
