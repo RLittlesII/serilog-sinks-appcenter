@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Microsoft.AppCenter.Crashes;
 using Serilog.Core;
@@ -12,6 +13,14 @@ namespace Serilog.Sinks.AppCenter.Crash
     /// </summary>
     public class CrashSink : ILogEventSink
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CrashSink"/> class.
+        /// </summary>
+        public CrashSink()
+            : this(default, default, default)
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CrashSink"/> class.
         /// </summary>
@@ -65,7 +74,17 @@ namespace Serilog.Sinks.AppCenter.Crash
                 }
             }
 
-            Crashes.TrackError(logEvent.Exception, properties);
+            TrackError(logEvent.Exception, properties);
+        }
+
+        /// <summary>
+        /// Tracks the error.
+        /// </summary>
+        /// <param name="exception">The exception.</param>
+        /// <param name="properties">The properties.</param>
+        protected virtual void TrackError(Exception exception, IDictionary<string, string> properties)
+        {
+            Crashes.TrackError(exception, properties);
         }
     }
 }
