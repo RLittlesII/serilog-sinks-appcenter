@@ -50,7 +50,7 @@ jobs:
       Configuration: $(Configuration)
       Verbosity: $(Verbosity)
       GitHub: true
-      GitHubPackages: false
+      GitHubPackages: true
       DotNetVersion: "2.2.300"
       DotNet3Version: "3.0.100"
       NuGetVersion: "5.2.0"
