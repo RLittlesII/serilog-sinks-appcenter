@@ -1,9 +1,9 @@
 <Project>
     <ItemGroup>
-        <PackageReference Update="Microsoft.AppCenter" Version="1.13.0" />
-        <PackageReference Update="Microsoft.AppCenter.Analytics" Version="1.13.0" />
-        <PackageReference Update="Microsoft.AppCenter.Crashes" Version="1.13.0" />
-        <PackageReference Update="Serilog" Version="2.6.0" />
+        <PackageReference Update="Microsoft.AppCenter" Version="2.*" />
+        <PackageReference Update="Microsoft.AppCenter.Analytics" Version="2.*" />
+        <PackageReference Update="Microsoft.AppCenter.Crashes" Version="2.*" />
+        <PackageReference Update="Serilog" Version="2.*" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Update="coverlet.msbuild" Version="2.5.1" />
