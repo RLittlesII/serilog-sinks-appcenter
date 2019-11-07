@@ -6,6 +6,11 @@
     <RootNamespace>Serilog.Sinks.AppCenter.Crash</RootNamespace>
     <AssemblyName>Serilog.Sinks.AppCenter.Crash</AssemblyName>
     <Description>A Serilog sink that writes events to App Center Diagnostics.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>Serilog.Sinks.AppCenter.Crash.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

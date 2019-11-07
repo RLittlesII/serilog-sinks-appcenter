@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Serilog.Sinks.AppCenter.Crash</name>
+    </assembly>
+    <members>
+        <member name="T:Serilog.LoggerConfigurationAppCenterExtensions">
+            <summary>
+            Adds the WriteTo.AppCenter() extension method to <see cref="T:Serilog.LoggerConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:Serilog.LoggerConfigurationAppCenterExtensions.AppCenterCrashes(Serilog.Configuration.LoggerSinkConfiguration,Serilog.Events.LogEventLevel,Serilog.Formatting.ITextFormatter,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Extension method that provides a <see cref="T:Serilog.LoggerConfiguration"/>.
+            </summary>
+            <param name="loggerConfiguration">The logger configuration.</param>
+            <param name="restrictedToMinimumLevel">The minimum log level.</param>
+            <param name="formatProvider">The format provider.</param>
+            <param name="properties">The properties.</param>
+            <returns>The logger configuration with an AppCenterSink.</returns>
+        </member>
+        <member name="M:Serilog.LoggerConfigurationAppCenterExtensions.AppCenterCrashes(Serilog.Configuration.LoggerSinkConfiguration,System.String,Serilog.Events.LogEventLevel,Serilog.Formatting.ITextFormatter,System.Collections.Generic.IDictionary{System.String,System.String},System.Type[])">
+            <summary>
+            Extension method that provides a <see cref="T:Serilog.LoggerConfiguration" /> and starts <see cref="T:Microsoft.AppCenter.AppCenter"/>.
+            </summary>
+            <param name="loggerConfiguration">The logger configuration.</param>
+            <param name="appCenterSecret">The application center secret.</param>
+            <param name="restrictedToMinimumLevel">The minimum log level.</param>
+            <param name="formatProvider">The format provider.</param>
+            <param name="properties">The properties.</param>
+            <param name="types">The <see cref="T:Microsoft.AppCenter.AppCenter"/> types.</param>
+            <returns>
+            The logger configuration with an AppCenterSink.
+            </returns>
+        </member>
+        <member name="T:Serilog.Sinks.AppCenter.Crash.CrashSink">
+            <summary>
+            Serilog sink for App Center <see cref="T:Microsoft.AppCenter.Crashes.Crashes"/>.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.AppCenter.Crash.CrashSink.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.AppCenter.Crash.CrashSink"/> class.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.AppCenter.Crash.CrashSink.#ctor(Serilog.Formatting.ITextFormatter,System.Collections.Generic.IDictionary{System.String,System.String},Serilog.Events.LogEventLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.AppCenter.Crash.CrashSink"/> class.
+            </summary>
+            <param name="formatProvider">The format provider.</param>
+            <param name="properties">The properties.</param>
+            <param name="restrictedToMinimumLevel">The restricted to minimum level.</param>
+        </member>
+        <member name="P:Serilog.Sinks.AppCenter.Crash.CrashSink.FormatProvider">
+            <summary>
+            Gets the format provider.
+            </summary>
+        </member>
+        <member name="P:Serilog.Sinks.AppCenter.Crash.CrashSink.RestrictedToMinimumLevel">
+            <summary>
+            Gets the restricted to minimum level.
+            </summary>
+        </member>
+        <member name="P:Serilog.Sinks.AppCenter.Crash.CrashSink.Properties">
+            <summary>
+            Gets the properties.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.AppCenter.Crash.CrashSink.Emit(Serilog.Events.LogEvent)">
+            <summary>
+            Emit the provided log event to the sink.
+            </summary>
+            <param name="logEvent">The log event to write.</param>
+        </member>
+        <member name="M:Serilog.Sinks.AppCenter.Crash.CrashSink.TrackError(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Tracks the error.
+            </summary>
+            <param name="exception">The exception.</param>
+            <param name="properties">The properties.</param>
+        </member>
+    </members>
+</doc>
