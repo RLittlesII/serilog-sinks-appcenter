@@ -16,7 +16,7 @@ resources:
     - repository: rsg
       type: github
       name: RocketSurgeonsGuild/AzureDevopsTemplates
-      ref: refs/tags/v0.10.5
+      ref: refs/tags/v0.11.3
       endpoint: github
 
 variables:
@@ -35,43 +35,24 @@ variables:
     value: 'a7985b68-199e-4537-bfed-62a02506f307'
 
 jobs:
-  - job: GitVersion
-    pool:
-      vmImage: "windows-2019"
-    steps:
-      - template: gitversion/store.yml@rsg
-        parameters:
-          NuGetVersion: "5.2.0"
-
-  - template: pipeline/nuke-job.yml@rsg
+  - template: pipeline/nuke.yml@rsg
     parameters:
       name: 'Build'
       dependsOn: GitVersion
+      vmImage: "macOS-10.14"
       Configuration: $(Configuration)
       Verbosity: $(Verbosity)
-      GitHub: true
       GitHubPackages: true
-      DotNetVersion: "2.2.300"
-      DotNet3Version: "3.0.100"
-      NuGetVersion: "5.2.0"
       EnableReleaseNotes: false
-
-  - job: Publish
-    pool:
-      vmImage: "windows-2019"
-    dependsOn:
-      - Build
-    steps:
-      - task: DownloadBuildArtifacts@0
-        displayName: "Download NuGet Packages"
-        inputs:
-          specificBuildWithTriggering: true
-          downloadType: single
-          artifactName: 'Nupkg - Windows'
-          downloadPath: $(Build.ArtifactStagingDirectory)/nuget/
-      - template: standard/nuget-push.yml@rsg
-        parameters:
-          Artifacts: "$(Build.ArtifactStagingDirectory)/"
-          NuGetVersion: "5.2.0"
-          Verbosity: $(Verbosity)
-          GitHubPackages: true
+      DotNetSdk:
+        - "2.2.x"
+        - "3.0.x"
+      NuGetVersion: "5.2.0"
+      PublishNuGetPackages: 'Windows'
+      Matrix:
+        Windows:
+          BuildName: "Windows"
+          ImageName: "Windows-latest"
+        macOS:
+          BuildName: "macOS"
+          ImageName: "macOS-latest"
