@@ -13,11 +13,11 @@
         <GlobalPackageReference Include="stylecop.analyzers" Version="1.1.1-beta.61" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Update="Microsoft.AppCenter" Version="2.5.*" />
-        <PackageReference Update="Microsoft.AppCenter.Analytics" Version="2.5.*" />
-        <PackageReference Update="Microsoft.AppCenter.Crashes" Version="2.5.*" />
+        <PackageReference Update="Microsoft.AppCenter" Version="2.*" />
+        <PackageReference Update="Microsoft.AppCenter.Analytics" Version="2.*" />
+        <PackageReference Update="Microsoft.AppCenter.Crashes" Version="2.*" />
         <PackageReference Update="Newtonsoft.Json" Version="12.0.2" />
-        <PackageReference Update="Serilog" Version="2.9.*" />
+        <PackageReference Update="Serilog" Version="2.*" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Update="coverlet.msbuild" Version="2.5.1" />

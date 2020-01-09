@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution", ".solution", "{
 		NuGet.config = NuGet.config
 		GitVersion.yml = GitVersion.yml
 		stylecop.json = stylecop.json
+		packages.props = packages.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{31E13C17-F139-417F-9684-AB940EB00143}"
